@@ -18,7 +18,7 @@ def home(request):
         else:
             messages.error(request, 'Invalid username or password.')
             return redirect('home')
-    return render(request, 'home.html')
+    return render(request, 'home.html', {})
 
 
 
@@ -26,3 +26,6 @@ def logout_user(request):
     logout(request)
     messages.success(request, 'Logged out successfully!')
     return redirect('home')
+
+def register_user(request):
+    return render(request, 'register.html', {})
